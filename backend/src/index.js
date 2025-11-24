@@ -33,4 +33,7 @@ app.get('/health', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`🎾 Serwer uruchomiony na porcie ${PORT}`);
+  console.log(`✅ FRONTEND_URL: ${process.env.FRONTEND_URL}`);
+  console.log(`✅ DATABASE_URL configured: ${process.env.DATABASE_URL ? 'YES' : 'NO'}`);
+  console.log(`✅ NODE_ENV: ${process.env.NODE_ENV}`);
 });
