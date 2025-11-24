@@ -42,6 +42,7 @@ router.post('/register', async (req, res) => {
       user: { id: user.id, email: user.email }
     });
   } catch (error) {
+    console.error('❌ Błąd rejestracji:', error);
     if (error.code === '23505') {
       return res.status(400).json({ error: 'Email już istnieje' });
     }
@@ -83,6 +84,7 @@ router.post('/login', async (req, res) => {
       user: { id: user.id, email: user.email, firstName: user.first_name, lastName: user.last_name }
     });
   } catch (error) {
+    console.error('❌ Błąd logowania:', error);
     res.status(500).json({ error: error.message });
   }
 });
